@@ -27,5 +27,13 @@ int main() {
         }
         cout << endl;
     }
+
+    // releasing memory
+    // on second arr heap 
+    for(int i=0; i<row; i++) {
+        delete [] arr[i];
+    }
+
+    delete []arr;
     return 0;
 }
