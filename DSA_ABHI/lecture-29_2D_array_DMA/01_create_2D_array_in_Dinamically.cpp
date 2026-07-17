@@ -8,6 +8,26 @@ int main() {
     cout << "Enter row & col size: " << endl;
     cin >> row >> col;
 
+    int **arr = new int *[col];
+
+    for(int i = 0; i<row; i++) {
+        arr[i] = new int;
+    }
+    // take input
+    for(int i = 0; i<row; i++) {
+        for(int j = 0; j<col; j++){
+            cin >> arr[i][j];
+
+        }
+    }
+    // print ouput
+    for(int i = 0; i<row; i++) {
+        for(int j = 0; j<col; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
     
 
     
