@@ -4,18 +4,18 @@
 #include<iostream>
 using namespace std;
 
-int firstocc(int arr[], int size, int key);
-int lastocc(int arr[], int size, int key);
+int firstOcc(int arr[], int size, int key);
+int lastOcc(int arr[], int size, int key);
 
 int main(){
 int even[8] = {3,3,3,6,7,9,12,15};
 
-cout << "First occurence to Index is: " << firstocc(even,8,3) << endl;
-cout << "last occurence to Index is: " << lastocc(even, 8,3) << endl;
+cout << "First occurrence to Index is: " << firstOcc(even,8,3) << endl;
+cout << "last occurrence to Index is: " << lastOcc(even, 8,3) << endl;
 }
 
-// find first occurence
-int firstocc(int arr[], int size, int key){
+// find first occurrence
+int firstOcc(int arr[], int size, int key){
 int start = 0;
 int end = size-1;
 int ans = -1;
@@ -40,8 +40,8 @@ mid = start + (end - start)/2;
 return ans;
 }
 
-// finding last occurence
-int lastocc(int arr[], int size, int key){
+// finding last occurrence
+int lastOcc(int arr[], int size, int key){
 int start = 0;
 int end = size-1;
 int ans = -1;

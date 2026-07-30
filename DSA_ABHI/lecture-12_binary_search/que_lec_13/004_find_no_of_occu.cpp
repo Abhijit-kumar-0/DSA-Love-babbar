@@ -1,21 +1,20 @@
-// find total number of occurences of an element in a sorted array
+// find total number of occurrences of an element in a sorted array
 #include<iostream>
 using namespace std;
 
-int firstocc(int arr[], int size, int key);
-int lastocc(int arr[], int size, int key);
+int firstOcc(int arr[], int size, int key);
+int lastOcc(int arr[], int size, int key);
 
 
 int main()
 {
-
     int arr[7] = {0,2,3,5,5,5,5};
-    int first = firstocc(arr,7,5);
-    int last = lastocc(arr,7,5);
-    cout << "Total number of occurence is: " << (last - first) + 1;
+    int first = firstOcc(arr,7,5);
+    int last = lastOcc(arr,7,5);
+    cout << "Total number of occurrence is: " << (last - first) + 1;
 }
 
-int firstocc(int arr[], int size, int key)
+int firstOcc(int arr[], int size, int key)
 {
     int start = 0;
     auto end = size;
@@ -41,7 +40,7 @@ int firstocc(int arr[], int size, int key)
 return ans;
 };
 
-int lastocc(int arr[], int size, int key)
+int lastOcc(int arr[], int size, int key)
 {
     int start = 0;
     auto end = size;
