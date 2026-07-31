@@ -10,6 +10,7 @@ int facto(int num) {
     int SmallerCase = facto(num - 1);
     int GreaterCase = num * SmallerCase;
     return GreaterCase;
+    // return num * facto(num - 1);
 }
 
 int main() {
