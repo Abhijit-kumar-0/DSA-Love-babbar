@@ -5,12 +5,12 @@ bool isFound(int arr[], int n, int target) {
     if(n == 0){
         return false;
     }
-
+ 
     if(arr[0] == target) {
         return true;
     }
     else {
-        int remainingPart = isFound(arr+1, n-1, target);
+        bool remainingPart = isFound(arr+1, n-1, target);
         return remainingPart;
     }
 
