@@ -2,28 +2,26 @@
 #include<string>
 using namespace std;
 
-string StrReverse(string s) {
-
+void StrReverse(string& s,int start, int end) {
+    
     // basecase 
-    if(s[0] == '\0') {
-        return s;
+    if(start>end) {
+        return;
     }
 
-    string newstr = newstr + s[0];
+    swap(s[start], s[end]);
 
-    return StrReverse(s.erase(0,1));
+    StrReverse(s,++start, --end);
 }
 
 int main(){
     string s = "babbar";
-    // cout << StrReverse(s);
-    string newstr = "b";
     
-    while(s[0] !='\0') {
-        cout << s[0] << " ";
-        cout << s.erase(0,1) << endl;
-        newstr = newstr+s[0];
-    }
-    cout << newstr;
+    int end = s.size()-1;
+    int start = 0;
+
+    StrReverse(s,start,end);
+    cout << s << endl;
+
 return 0;
 }
