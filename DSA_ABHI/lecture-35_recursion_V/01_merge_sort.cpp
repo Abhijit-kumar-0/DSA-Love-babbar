@@ -11,10 +11,8 @@ void mergeTwo(int *nums, int s, int e) {
     int *first = new int[len1];
     int *second = new int[len2];
 
-    cout << len1 << " " << len2 << endl;
-
     int mainarrayindex = s;
-    cout << "first" << mainarrayindex << endl;
+
     // store first array
     for(int i=0; i<len1; i++) {
         first[i] = nums[mainarrayindex++];
@@ -46,6 +44,10 @@ void mergeTwo(int *nums, int s, int e) {
     while(index1 < len1) {
         nums[mainarrayindex++] = second[index2++];
     }
+
+    // delete memory
+    delete []first;
+    delete []second;
 }
 
 void mergeSort(int *nums, int s, int e) {
