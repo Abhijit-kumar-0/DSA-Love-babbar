@@ -2,14 +2,17 @@
 using namespace std;
 
 int partition(int* arr, int s, int e) {
-    int pivotIdx = s;
-    int min = arr[s];
+    int count = 0;
+    // int pivotIdx = s;
+    // int min = arr[s];
 
     for(int i = s; i<e; i++) {
-        if(arr[i] < min) {
-            pivotIdx++;
+        if(arr[i] < arr[s]) {
+            // pivotIdx++;
+            count++;
         }
     }
+    int pivotIdx = s + count;
 
 
     // place the right position of the given pivot
@@ -38,6 +41,7 @@ void quicksort(int* arr, int s, int e) {
 
     int p = partition(arr, s, e);
 
+    // base case
     if(s >= e) {
         return;
     }
