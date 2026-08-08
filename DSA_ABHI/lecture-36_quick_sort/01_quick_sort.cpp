@@ -17,7 +17,7 @@ int partition(int* arr, int s, int e) {
 
     // less then or greater then pivot element shift 
     int i = s;
-    int j = e;
+    int j = e-1;
     int pivot = arr[pivotIdx];
     while(pivotIdx > i && pivotIdx < j) {
         while(arr[i] <= pivot) {
@@ -27,14 +27,10 @@ int partition(int* arr, int s, int e) {
             j--;
         }
 
-        if(i < pivotIdx && j > pivotIdx) {
-            swap(arr[i], arr[j]);
-            i++;
-            j--;
+        if(arr[i] > pivot && arr[j] < pivot) {
+            swap(arr[i++], arr[j--]);
         }
-
     }
-
     return pivotIdx;
 }
 
@@ -56,7 +52,7 @@ void quicksort(int* arr, int s, int e) {
 
 int main(){
 
-    int arr[7] = {10,80,30,90,40,50,70};
+    int arr[7] = {10,80,30,90,40,50,0};
     int size = sizeof(arr)/ sizeof(arr[0]);
 
     quicksort(arr, 0, size);
