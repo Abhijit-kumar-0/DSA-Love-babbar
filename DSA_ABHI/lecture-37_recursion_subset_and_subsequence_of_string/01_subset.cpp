@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<set>
 using namespace std;
 
 void subset(vector<int> nums, int index, vector<int> output, vector<vector<int>>& ans) {
@@ -21,15 +22,21 @@ void subset(vector<int> nums, int index, vector<int> output, vector<vector<int>>
 }
 
 int main(){
-    vector<int> nums = {2,3,5};
+    vector<int> nums = {1,2,2};
     int index = 0;
     vector<vector<int>> ans;
     vector<int> output;
 
     subset(nums, index, output, ans);
 
+        // Use set to store unique vectors
+    set<vector<int>> uniqueSet(ans.begin(), ans.end());
+
+    // Convert back to vector
+    vector<vector<int>> result(uniqueSet.begin(), uniqueSet.end());
+
     cout << "[ ";
-for (const auto& v : ans) {
+for (const auto& v : result) {
     cout << "[";
     for (auto i : v) {
         cout << i << ",";

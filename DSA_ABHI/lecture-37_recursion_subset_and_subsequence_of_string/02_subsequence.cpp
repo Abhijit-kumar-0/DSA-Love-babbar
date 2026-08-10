@@ -3,11 +3,13 @@
 #include<string>
 using namespace std;
 
-void subsequence(string str, string output, int idx, vector<string> ans) {
+void subsequence(string str, string output, int idx, vector<string>& ans) {
 
     // base case
-    if(idx >= idx) {
-        ans.push_back(output);
+    if(idx >= str.size()) {
+        if(output.size() > 0) {
+            ans.push_back(output);
+        }
         return;
     }
 
@@ -23,16 +25,14 @@ void subsequence(string str, string output, int idx, vector<string> ans) {
 int main(){
 
     string str = "abc";
-    
     vector<string> ans; 
     string output = "";
     int idx = 0;
 
     subsequence(str, output, idx, ans);
 
-    ans.push_back("a");
     for(int i = 0; i<ans.size(); i++) {
-        cout << ans[i] << " ";
+            cout << ans[i] << endl;
     }
 
 return 0;
