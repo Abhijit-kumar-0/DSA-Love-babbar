@@ -1,28 +1,48 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-void solve(vector<int> nums, int index, vector<vector<int>>& ans) {
-    // base case
-    if(index >= nums.size()) {
-        ans.push_back(nums);
-        return;
+// LeetCode 31: Next Permutation
+void nextPermutation(vector<int>& nums) {
+    int n = nums.size();
+    int i = n - 2;
+
+    // Step 1: Find the first element from right where nums[i] < nums[i + 1] (pivot/break point)
+    while (i >= 0 && nums[i] >= nums[i + 1]) {
+        i--;
     }
 
-    for(int j = index; j<nums.size(); j++) {
-        swap(nums[index], nums[j]);
-        solve(nums, index+1, ans);
-        // backtrack
-        swap(nums[index], nums[j]);
+    // Step 2: If break point is found, find the element just greater than nums[i] from right
+    if (i >= 0) {
+        int j = n - 1;
+        while (nums[j] <= nums[i]) {
+            j--;
+        }
+        // Step 3: Swap nums[i] and nums[j]
+        swap(nums[i], nums[j]);
     }
+
+    // Step 4: Reverse elements from index i + 1 to the end
+    reverse(nums.begin() + i + 1, nums.end());
 }
 
+int main() {
+    vector<int> nums = {1, 2, 3};
 
-int main(){
-    vector<int> nums = {1,3,4};
-    int index = 0;
-    vector<vector<int>> ans;
-    solve(nums, index, ans);
+    cout << "Original vector: ";
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
 
-return 0;
+    nextPermutation(nums);
+
+    cout << "Next Permutation: ";
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
