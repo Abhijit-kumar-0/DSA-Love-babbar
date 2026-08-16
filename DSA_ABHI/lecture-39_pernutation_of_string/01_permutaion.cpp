@@ -45,4 +45,10 @@ int main() {
     cout << endl;
 
     return 0;
+index, ans);
+
+return 0;
+index, ans);
+
+return 0;
 }
