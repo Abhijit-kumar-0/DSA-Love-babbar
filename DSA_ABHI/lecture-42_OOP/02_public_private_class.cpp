@@ -1,4 +1,5 @@
 #include<iostream>
+//#include "filename.cpp"  // you can access class data form other file
 using namespace std;
 
 class Hero {
@@ -12,12 +13,17 @@ class Hero {
 int main(){
 // by default class has been private
 // public data can access any where in class or int main
-// private only access in class
+// only private data can access in class
 
 // create object
 Hero Ramesh;
 
-cout << "Access the public date from the class: " << Ramesh.Health << endl;
+// set the value
+Ramesh.Health = 70;
+
+//excess the class data use dot(.) operator before created the object
+cout << "Access the public data from the class: " << Ramesh.Health << endl; 
+
 // cout << "can't be Access the private date from out side the class: " << Ramesh.level << endl;
 
 
