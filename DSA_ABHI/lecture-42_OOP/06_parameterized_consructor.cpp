@@ -28,8 +28,12 @@ class Hero {
     }
     */
     
+    /*
+    this pointer is stored the current object address
+    */
+
     Hero(bool login, int captureNo) {
-        cout << "use this pointer: " << endl;
+        cout << "this is a pointer: " << this << endl;
         this -> login = login;
         this -> captureNo = captureNo;
         
@@ -49,6 +53,7 @@ int main(){
     Hero *b = new Hero(50);
 
     Hero temp(true, 20);
+    cout << "address:" << &temp << endl;
     temp.print();
 
 return 0;
