@@ -41,6 +41,7 @@ int main(){
   // copy constructor
   // by default will copy the data from R to temp object. when you create copy constructor object
   Hero temp(R);
+  // Hero temp = R; // second option 
   temp.print();
 
   return 0;
