@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// a child class inherit the data member from parent then child class data inherited to other child and so on
+
 class animal {
     public:
     int age;
