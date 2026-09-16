@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+// one child class inherit data member from more than two class
 class animal {
 
     public:
